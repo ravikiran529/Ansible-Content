@@ -1,0 +1,14 @@
+--- # Installing services required on all types of servers
+- hosts: webservers
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  gather_facts: yes
+  tasks:
+  - name: Install httpd on centos webservers
+    yum: pkg=httpd state=installed update_cache=true
+    when: ansible_os_family == 'RedHat'
+  -name: Install Apache2 on Ubuntu webservers
+    apt: pkg=apache2 state=installed update_cache=true
+    when: ansible_os_family == 'Debian'
+    
