@@ -1,23 +1,24 @@
 This is how we can maintain multi-stage environments with ansible.
 
     Project/
-          |              
+          | 
+          |___ansible.cfg
           |___Dev/                       # environment specific directory
           |    |__inventory              # Dev specific inventory
           |    |__group_vars/            # Dev specific group variables
-          |         |__all.yml           # variables for whole environment
+          |         |__all.yml           # variables for the whole environment
           |         |__web.yml
           |         |__app.yml
           |___Stage/                     # environment specific directory
           |    |__inventory              # Stage specific inventory
           |    |__group_vars/            # Stage specific group variables
-          |         |__all.yml           # variables for whole environment
+          |         |__all.yml           # variables for the whole environment
           |         |__web.yml
           |         |__app.yml
           |___Prod/                      # environment specific directory
           |    |__inventory              # Prod specific inventory
           |    |__group_vars/            # Prod specific group variables
-          |         |__all.yml           # variables for whole environment
+          |         |__all.yml           # variables for the whole environment
           |         |__web.yml
           |         |__app.yml    
           |
