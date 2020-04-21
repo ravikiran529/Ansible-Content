@@ -1,0 +1,10 @@
+---
+- hosts: self
+  become: yes
+  become_method: sudo
+  #connection: local
+  
+  roles:
+    - roles/common      
+    - roles/tomcat
+      
