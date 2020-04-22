@@ -1,5 +1,5 @@
 ---
-#JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64
+JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64
 user_name: tomcat1
 group_name: tomcat1
 base_dir: /usr/share/tomcat1

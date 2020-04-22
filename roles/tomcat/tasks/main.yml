@@ -30,3 +30,16 @@
     state: started
     enabled: yes
   when: ansible_service_mgr == "systemd"
+- name: Download latest artifact from nexus
+  maven_artifact:
+    group_id: com.exapmle
+    artifact_id: java-maven
+    repository_url: 'http://localhost:8081/repository/maven-snapshots/'
+    username: "{{ nexus_username }}"
+    password: "{{ nexus_pass }}"
+    dest: /tmp/java-maven-latest.war
+- name: Deploy latest artifact
+  copy:
+    src: /tmp/java-maven-latest.war 
+    dest: "{{ base_dir }}/webapps/webapps.war"
+    owner: "{{ user_name }}"  
